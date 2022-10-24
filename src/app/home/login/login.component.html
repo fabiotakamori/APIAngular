@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-6">
+        <h1>Chaves de integração</h1>
+        <h5 class="mt-2, mb-2">Obter as chaves</h5>
+        <p>Para obter as chaves de integração o primeiro passo, será
+            reliazar o credenciamento na plataforma e após isso irá receber
+            as chaves consumer_key, consumer_secret e code
+        </p>
+    </div>
+    <div class="col-6">
+        <div class="col-6">
+            <h5>Chaves de autenticação no Ecommerce</h5>
+            <form class="form mt-4" (ngSubmit)="login()">
+                <div class="form-group">
+                    <span>
+                        Consumer_key
+                    </span>
+                    <!--[()] = two way databind-->
+                    <input class="form-control"  placeholder="Digite a chave" 
+                    [(ngModel)]="consumer_key" name="consumer_key"/>
+                </div>
+    
+                <div class="form-group">
+                    <span>
+                        Consumer_secret
+                    </span>
+                    <input class="form-control"  placeholder="Digite a chave" 
+                    [(ngModel)]="consumer_secret" name="consumer_secret"
+                    />
+                </div>
+    
+                <div class="form-group">
+                    <span>
+                       Code
+                    </span>
+                    <input class="form-control"  placeholder="Digite a chave" 
+                    [(ngModel)]="code" name="code"/>
+                </div>
+    
+                <button type="submit" class="btn btn-primary btn-block mt-4">
+                    Realizar autenticação via chave
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
