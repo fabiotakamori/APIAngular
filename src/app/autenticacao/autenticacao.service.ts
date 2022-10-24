@@ -22,7 +22,7 @@ export class AutenticacaoService {
       };
 
       console.log(consumer, secret, c )
-      return this.httpClient.post('http://mirai.commercesuite.com.br/web_api/auth', {
+      return this.httpClient.post('https://mirai.commercesuite.com.br/web_api/auth', {
          consumer_key:consumer,
          consumer_secret:secret,
          code:c
