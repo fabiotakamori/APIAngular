@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
-import { ProdutoComponent } from './produto/produto.component';
+import { ProdutoComponent } from '../produtos/produto/produto.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { MensagemModule } from '../componentes/mensagem/mensagem.module';
 
 
 
@@ -12,12 +13,13 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     HomeComponent,
     ProdutoComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    FormsModule
+    FormsModule,
+    MensagemModule
     
   ],
   exports:[HomeComponent]

@@ -1,4 +1,4 @@
-<div>
+<div class="container mt-5">
     <div class="row">
         <div class="col-6">
             <h1>Cadastro de produto</h1>
@@ -8,44 +8,44 @@
         </div>
         <div class="col-6">
             <h4>Cadastro de produto</h4>
-            <form class="form mt-4">
+            <form class="form mt-4" (ngSubmit)="cadastrar_produto()">
                 <div class="form-group">
                     <span>
                         Nome do produto
                     </span>
-                    <input class="form-control" placeholder="Digite o nome do produto"/>
+                    <input class="form-control" placeholder="Digite o nome do produto" [(ngModel)]="nome" name="nome"/>
                 </div>
                 <div class="form-group">
                     <span>
                         Descrição do produto
                     </span>
-                    <input class="form-control"  placeholder="Digite o preço" type="text"/>
+                    <input class="form-control"  placeholder="Descricão do produto" type="text" [(ngModel)]="descricao" name="descricao"/>
                 </div>
                 <div class="form-group">
                     <span>
                         Preço do produto
                     </span>
-                    <input class="form-control"  placeholder="Digite o preço" type="number"/>
+                    <input class="form-control"  placeholder="Digite o preço" type="number" [(ngModel)]="preco" name="preco"/>
                 </div>
                 <div class="form-group">
                     <span>
                     Estoque do produto
                     </span>
-                    <input class="form-control"  placeholder="Quantidade de estoque" type="number"/>
+                    <input class="form-control"  placeholder="Quantidade de estoque" type="number" [(ngModel)]="estoque" name="estoque"/>
                 </div>
     
                 <div class="form-group">
                     <span>
                         Categoria do produto
                     </span>
-                    <input class="form-control"  placeholder="Digite o preço" type="number"/>
+                    <input class="form-control"  placeholder="Digite o id da categoria" type="number" [(ngModel)]="categoria" name="categoria"/>
                 </div>
     
                 <div class="form-group">
                     <span>
                         URL da imagem do produto
                     </span>
-                    <input class="form-control"  placeholder="Insira a URL do produto" type="number"/>
+                    <input class="form-control"  placeholder="Insira a URL do produto" type="text" [(ngModel)]="imagem" name="imagem"/>
                 </div>
     
                 <button type="submit" class="btn btn-primary btn-block mt-4">

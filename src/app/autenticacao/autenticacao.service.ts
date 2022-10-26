@@ -8,7 +8,10 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class AutenticacaoService {
 
-  constructor(private httpClient:HttpClient) {}
+  
+
+  constructor(private httpClient:HttpClient) {
+  }
     
   //Observable é como se fosse uma promessa é um objeto de quando a requisição completar, ele retorna o objeto definido dentro do observable
   auntenticar(consumer:string , secret:string, c:string): Observable<any>{
@@ -28,7 +31,8 @@ export class AutenticacaoService {
          code:c
       }, httpOptions);
     
-    }
+  }
+
 
   
 }
