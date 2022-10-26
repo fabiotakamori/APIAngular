@@ -10,14 +10,20 @@
     <div class="col-6">
         <div class="col-6">
             <h5>Chaves de autenticação no Ecommerce</h5>
-            <form class="form mt-4" (ngSubmit)="login()">
+            <form class="form mt-4" (ngSubmit)="login()" #loginForm="ngForm">
                 <div class="form-group">
                     <span>
                         Consumer_key
                     </span>
                     <!--[()] = two way databind-->
                     <input class="form-control"  placeholder="Digite a chave" 
-                    [(ngModel)]="consumer_key" name="consumer_key"/>
+                    [(ngModel)]="consumer_key" name="consumer_key"
+                    #campoKey="ngModel"
+                    required
+                    />
+                    <app-mensagem 
+                    *ngIf = "campoKey.invalid && campoKey.touched"
+                    mensagem="Chave key obrigatória"></app-mensagem>
                 </div>
     
                 <div class="form-group">
@@ -26,7 +32,12 @@
                     </span>
                     <input class="form-control"  placeholder="Digite a chave" 
                     [(ngModel)]="consumer_secret" name="consumer_secret"
+                    #campoSecret="ngModel"
+                    required
                     />
+                    <app-mensagem 
+                    *ngIf = "campoSecret.invalid && campoSecret.touched"
+                    mensagem="Chave secret obrigatória"></app-mensagem>
                 </div>
     
                 <div class="form-group">
@@ -34,11 +45,16 @@
                        Code
                     </span>
                     <input class="form-control"  placeholder="Digite a chave" 
-                    [(ngModel)]="code" name="code"/>
+                    [(ngModel)]="code" name="code"
+                    #campoCode="ngModel"
+                    required/>
+                    <app-mensagem 
+                    *ngIf = "campoCode.invalid && campoCode.touched"
+                    mensagem="Code obrigatória"></app-mensagem>
                 </div>
     
-                <button type="submit" class="btn btn-primary btn-block mt-4">
-                    Realizar autenticação via chave
+                <button type="submit" class="btn btn-primary btn-block mt-4" [disabled]="loginForm.invalid">
+                    Autenticar
                 </button>
             </form>
         </div>
