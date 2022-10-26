@@ -10,6 +10,7 @@ import {CookieService} from 'ngx-cookie-service'
   styleUrls: ['./produto.component.scss']
 })
 
+
 export class ProdutoComponent implements OnInit {
   nome:string =''
   descricao:string =''
