@@ -13,8 +13,18 @@
             font-weight: bold;
         }
     }
+    .login{
+        .btn-sair{
+            background-color:  rgb(10, 74, 148);
+            border: none;
+        }
+        .btn-sair:hover{
+            background-color: white;
+            color:  rgb(10, 74, 148);
+        }    
+    }
 }
-.container{
+.estrutura{
     min-height: 1000px;
 }
 footer{

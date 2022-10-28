@@ -29,7 +29,9 @@ export class ProdutosComponent implements OnInit {
       console.log(response.Products[0])
       console.log(response.Products)
     },(error)=>{
-      console.log(error)
+      if(error.status == 401){
+        this.router.navigate(['home'])
+      }
     })
   }
 

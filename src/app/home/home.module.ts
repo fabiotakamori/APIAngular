@@ -12,7 +12,6 @@ import { MensagemModule } from '../componentes/mensagem/mensagem.module';
 @NgModule({
   declarations: [
     HomeComponent,
-
     LoginComponent,
   ],
   imports: [

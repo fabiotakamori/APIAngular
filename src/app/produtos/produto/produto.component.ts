@@ -22,6 +22,11 @@ export class ProdutoComponent implements OnInit {
   
   constructor(private reqService: RequisicaoService, private authService: AutenticacaoService, private router:Router, private coockie: CookieService) {
     this.chave = this.coockie.get('access_token')  
+    this.reqService.listarProdutos(this.chave).subscribe((response)=>{
+    },(error)=>{if(error.status == 401){
+        this.router.navigate(['home'])
+      }
+    })
   }
 
   ngOnInit(): void {
@@ -33,8 +38,9 @@ export class ProdutoComponent implements OnInit {
         console.log(response)
         alert("Produto Criado com sucesso")
     },(error)=>{
-      
-       console.log(error)
+      if(error.status == 401){
+        this.router.navigate(['home'])
+      }
     })
    
   }
