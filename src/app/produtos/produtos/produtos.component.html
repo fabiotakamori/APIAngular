@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+<div class="container mt-5">
+    <h3>Produtos cadastrados</h3>
+    <div>
+        <div *ngFor="let element of produtos">
+            <div class="row">
+                <div class="row-12">
+                    <div class="row">
+                        <div class="col-3 mt-3">
+                            <h4>{{element.Product.name}}</h4>
+                            <p><strong>Id do produto: </strong>{{element.Product.id}}</p>
+                            <p><strong>Marca: </strong>{{element.Product.name}}</p>
+                            <p><strong>Id da categoria: </strong>{{element.Product.category_id}}</p>
+                            <p><strong>Preço: </strong>{{element.Product.price}}</p>
+                        </div>
+                        <div class="col-3 mt-3">
+                            <img  *ngIf="element.Product.ProductImage.length>0;else NoProduct"class="thumb"[src]="element.Product.ProductImage[0].https">
+                            
+                            <ng-template #NoProduct>
+                                <img  class="thumb" src="https://images.tcdn.com.br/img/img_prod/1053462/carteira_media_sem_fecho_fasolo_h055143_3901_1_5a4430aa2ca35e92b757df5aeb17f61f.png">
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

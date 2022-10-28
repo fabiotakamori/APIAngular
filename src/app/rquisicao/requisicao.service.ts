@@ -32,9 +32,18 @@ export class RequisicaoService {
             price:preco,
             stock: estoque,
             category_id: categoria,
-            picture_source_1:url
+            picture_source_1:url,
+            available: 1
          }
       }, httpOptions);
 
   }
+  
+  listarProdutos(access_token:string): Observable<any>{
+
+    this.chave = access_token;
+    return this.httpClient.get(`https://mirai.commercesuite.com.br/web_api/products?access_token=${this.chave}&sort=id_desc&limit=10`)
+
+  }
+
 }

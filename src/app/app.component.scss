@@ -1,4 +1,37 @@
 .header{
     background-color: rgb(10, 74, 148);
     height: 100px;
+
+    .navbar-brand{
+        img{
+            width: 100px;
+            margin-left: 50px;
+        }
+        span{
+            margin-left: 20px;
+            color: white;
+            font-weight: bold;
+        }
+    }
+}
+footer{
+    height: 200px;
+    background-color: rgb(10, 74, 148) ;
+    padding-top: 30px;
+    padding-left: 60px;
+
+    .row{
+        .col-4{
+            h5{
+                color: white;
+            }
+            ul{
+                li{
+                    color: white;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+
 }
